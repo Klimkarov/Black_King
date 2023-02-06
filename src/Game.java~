@@ -1,0 +1,161 @@
+import sun.security.krb5.internal.SeqNumber;
+
+import java.util.*;
+
+public class Game {
+
+    private ArrayList<Deck> deck;
+
+    public Game() {
+        this.deck = new ArrayList<Deck>();
+    }
+
+    public void getDeck() {
+
+        //Prviov for e za da podeli 2 shpila
+        for (int i = 0; i < 2; i++) {
+            //Iteracija na enum Numbers
+            for (Numbers num : Numbers.values()) {
+                //Iteracija na enum Colors
+                for (Colors color : Colors.values()) {
+                    // Polnenje na ArrayList Deck so numbers i colors
+                    Deck card = new Deck(num, color);
+                    // Napolni ja deck bez site Popovi
+                    if (num != Numbers.KING) {
+                        deck.add(card);
+                    }
+
+                    //Ovde proveruva ako e Pop i e Crn i ne se sodrzi vo podelenite karti togas podeli go
+                    //Staveno za vtoriot pat koga ke dojde da deli da
+                    if (num == Numbers.KING && color == Colors.CLUB && !deck.contains(card)) {
+                        deck.add(card);
+                    }
+                }
+            }
+        }
+        // Izmeshani karti
+        Collections.shuffle(deck);
+        System.out.println(deck);
+    }
+
+    public void dieledCards(){
+        System.out.println("dodeluvanje edna karta");
+        while (!deck.isEmpty()){
+
+        }
+        List<Deck> sublist = this.deck.subList(1, 2);
+        System.out.println(sublist);
+
+    }
+//    public void Deck() {
+//        for (Colors colors_i : Colors.values()) {
+//            for (Numbers numbers_i : Numbers.values()) {
+//                this.deck.add(new Deck(numbers_i, colors_i));
+
+                //      for (Deck i : deck)
+                    //String checkKingClub = "KINGCLUB\n";
+//                String checkKingDiamond = "KINGSPADE\n";
+//                String checkKingSpade = "KINGDIAMOND\n";
+        //            String numberKing = "KINGCLUB";
+        //        String colorKing = "CLUB";
+        //        String king = String.valueOf(i);
+        //        String color = String.valueOf(colors_i);
+         //       if (i.equals(numberKing)) {
+          //          deck.remove(i);
+
+
+
+
+
+//        String[] array = new String[104];
+//        for (int i = 0; i < deck.size(); i++) {
+//            String txt = String.valueOf(deck.get(i));
+//            array = new String[]{txt};
+//            System.out.println(Arrays.toString(array));
+//        }
+//        System.out.println("oevnr");
+//        for (int i = 0; i < array.length; i++) {
+//            System.out.println(array[i]);
+//        }
+      //  System.out.println(Arrays.toString(array));
+//        System.out.println(deck);
+//        System.out.println();
+//        Collections.copy(decks, deck);
+//        System.out.println();
+//        System.out.println(decks);
+
+
+//                for (Deck i: deck) {
+//                    String numbers = String.valueOf(i);
+//                    String colors = String.valueOf(i);
+//                    if (numbers.equals("KING")&&colors.equals("SPADE")){
+//                        this.deck.remove(i);
+//
+//                    }
+//                }
+
+
+//            }
+//
+//        }
+//        System.out.println(deck);
+//    }
+//        HashMap<Numbers, Colors> realDeck = new HashMap<>(deck);
+//        System.out.println(realDeck);
+
+            //System.out.println(deck);
+//            String checkKingClub = "KING";
+//            String c = "CLUB";
+//
+//                System.out.println(deck);
+////if(numbers_i.equals(checkKingClub)){
+////
+////}
+//            }
+//
+//        for (Deck deck_i: deck){
+//
+//
+//
+//            }
+
+
+//        Object[] array = deck.toArray();
+//        List<Object> realDeck = Arrays.asList(array);
+            //  for(int i = 0; i < array.length; i++) {
+            //     for(int j = 0; j < array.length; j++){
+            //    String s = String.valueOf(array[j]);
+            //   System.out.println(s);
+
+//        if (s.equals("KING CLUB\n")) {
+//
+//            realDeck.remove(s);
+//            System.out.println(realDeck);
+//        }
+            //      }
+            //    System.out.println(realDeck);
+            //   }
+
+            Random random = new Random();
+            //   System.out.println(deck) ;
+
+//        for (Numbers i: deck.keySet()) {
+//
+//            String king = "KING";
+//
+//            deck.remove(Numbers.KING, Colors.CLUB);
+//            deck.remove(Numbers.KING, Colors.DIAMOND);
+//            deck.remove(Numbers.KING, Colors.SPADE);
+//            System.out.println(deck);
+//break;
+//        }
+
+
+
+}
+
+
+
+
+
+
